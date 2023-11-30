@@ -85,7 +85,7 @@ df_to_observe <-
   subset(df_to_observe,
          !(df_to_observe$question %in% values_to_remove))
 
-# We notice that now, we have 361 less observations
+# We notice that now, we have 388 less observations
 length(df$question) - length(df_to_observe$question)
 
 # And we check our logistic regression again
@@ -111,8 +111,8 @@ log_reg_to_observe <-
 summary(log_reg_to_observe)
 
 # Gott sei Dank is our intercept still statistically significant (p= 0.00133)
-# and implies that when distance increases by 1% the probabilities of an
-# overt connective happennig increases by 0.012169%. Now, we can visualize.
+# and implies that when distance increases by 1 the probabilities of an
+# overt connective happening increases by 0.012169. Now, we can visualize.
 
 ############ VISUALIZATION ###########
 
@@ -143,10 +143,6 @@ yprobabily <-
 plot(xdistance, yprobabily)
 lm_model <- lm(yprobabily ~ xdistance)
 abline(lm_model, col = "blue")
-
-
-
-
 
 ############ REFERENCES ###########
 
