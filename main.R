@@ -82,7 +82,8 @@ summary(log_reg_to_observe)
 # our intercept.
 values_to_remove <- c(7, 8, 11, 16, 18, 21, 22, 24, 27, 29)
 df_to_observe <-
-  subset(df_to_observe,!(df_to_observe$question %in% values_to_remove))
+  subset(df_to_observe,
+         !(df_to_observe$question %in% values_to_remove))
 
 # We notice that now, we have 361 less observations
 length(df$question) - length(df_to_observe$question)
@@ -142,3 +143,19 @@ yprobabily <-
 plot(xdistance, yprobabily)
 lm_model <- lm(yprobabily ~ xdistance)
 abline(lm_model, col = "blue")
+
+
+
+
+
+############ REFERENCES ###########
+
+# Articles:
+# Clark, R. G., Blanchard, W., Hui, F. K. C., Tian, R., & Woods, H. (2023, April 1). Dealing with complete separation and quasi-complete separation in logistic regression for linguistic data. Research Methods in Applied Linguistics. https://doi.org/10.1016/j.rmal.2023.100044
+
+# Books:
+# Johnson, K. (2008). Quantitative methods in linguistics / Keith Johnson. Blackwell. Chapter 5.5 An Example from the [∫]treets of Columbus.
+# Hosmer, D. & Lemeshow, S. (2000). Applied Logistic Regression (Second Edition). New York: John Wiley & Sons, Inc. Chapter 1 Introduction to the Logistic Regression Model
+
+# Websites:
+# https://stats.oarc.ucla.edu/r/dae/logit-regression/
